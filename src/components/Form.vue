@@ -1,0 +1,21 @@
+<template>
+    <form @submit.prevent="handleSubmit">
+        <input type="text" v-model="newItem" />
+        <input type="submit" value="Добавить" />
+    </form>
+
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const newItem = ref('');
+
+const emits = defineEmits(['item-added']);
+const handleSubmit = () => {
+    emits('item-added', newItem.value.trim());
+    newItem.value = '';
+};
+
+
+</script>
