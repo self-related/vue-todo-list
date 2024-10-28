@@ -1,12 +1,13 @@
 <template>
-  <main>
+  <div id="to-do-list">
+    <h1>Лист</h1>
     <Form @item-added="addItem" />
     <ul>
       <li v-for="item in items" :key="'item-' + nanoid()" >
         <Item :item="item" @item-deleted="deleteItem" @item-status-changed="changeStatus"/>
       </li>
     </ul>
-  </main>
+  </div>
 </template>
 
 <script setup>
@@ -39,3 +40,30 @@ const changeStatus = (name, status) => {
 
 };
 </script>
+
+<style>
+#to-do-list {
+  background-color: #404040;
+  border-radius: 15px;
+  min-height: 500px;
+  min-width: 300px;
+  width: 50%;
+  margin: auto;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+ul {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+li {
+  list-style: none;
+  max-width: 100%;
+}
+</style>

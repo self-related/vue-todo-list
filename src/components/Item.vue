@@ -1,7 +1,7 @@
 <template>
-    <div :class="isDone ? 'done asd' : ''">
+    <div :class="isDone ? 'done item' : 'item'">
         <input type="checkbox" v-model="isDone" @change="handleCheck">
-        {{ item.name }}
+        <p>{{ item.name }}</p>
         <button @click="handleClick" :class="isDone ? 'done' : ''">X</button>
     </div>
 </template>
@@ -23,7 +23,16 @@ import { ref } from 'vue';
 </script>
 
 <style scoped>
+.item {
+    display: flex;
+    gap: 1rem;
+    max-width: 100%;
 
+}
+p {
+    max-width: 100%;
+    word-wrap: break-word;
+}
 div[class~=done] {
     color: gray;
     text-decoration: line-through;
