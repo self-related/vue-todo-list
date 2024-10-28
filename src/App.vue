@@ -2,6 +2,7 @@
   <div id="to-do-list">
     <h1>Лист</h1>
     <Form @item-added="addItem" />
+    <button id="delete-all" @click="deleteAll">Удалить все</button>
     <ul>
       <li v-for="item in items" :key="'item-' + nanoid()" >
         <Item :item="item" @item-deleted="deleteItem" @item-status-changed="changeStatus"/>
@@ -21,7 +22,7 @@ const items = ref([]);
 const addItem = (itemName) => {
   if (itemName === '') 
     return;
-  if ( items.value.find(item => item.name === itemName) ) {
+  if ( items.value?.find(item => item.name === itemName) ) {
     alert("Уже есть такой пункт!");
     return;
   }
@@ -39,6 +40,12 @@ const changeStatus = (name, status) => {
   console.log(items.value);
 
 };
+
+const deleteAll = () => {
+  if (confirm("Удалить все элементы?")) {
+    items.value = [];
+  }
+};
 </script>
 
 <style>
@@ -54,6 +61,17 @@ const changeStatus = (name, status) => {
   flex-direction: column;
   justify-content: start;
   align-items: center;
+}
+#delete-all {
+  background: none;
+  border: none;
+  margin: 5px;
+  color: red;
+  text-decoration: underline;
+  cursor: pointer;
+}
+#delete-all:hover {
+  color: blueviolet;
 }
 
 ul {

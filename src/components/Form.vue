@@ -49,5 +49,14 @@ input[type="submit"] {
   color: white;
   font-weight: bold;
   text-shadow: 0.05rem 0.05rem 0.05rem black;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: blueviolet;
+}
+
+input[type="submit"]:active {
+    background-color: red;
 }
 </style>
