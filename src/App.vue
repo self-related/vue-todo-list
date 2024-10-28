@@ -2,7 +2,7 @@
   <div id="to-do-list">
     <h1>Лист</h1>
     <Form @item-added="addItem" />
-    <button id="delete-all" @click="deleteAll">Удалить все</button>
+    <a href="javascript:void(0)" id="delete-all" @click="deleteAll">Удалить все</a>
     <ul>
       <li v-for="item in items" :key="'item-' + nanoid()" >
         <Item :item="item" @item-deleted="deleteItem" @item-status-changed="changeStatus"/>
@@ -63,12 +63,12 @@ const deleteAll = () => {
   align-items: center;
 }
 #delete-all {
+  font-size: 0.8rem;
   background: none;
   border: none;
   margin: 5px;
   color: red;
   text-decoration: underline;
-  cursor: pointer;
 }
 #delete-all:hover {
   color: blueviolet;

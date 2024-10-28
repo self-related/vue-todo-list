@@ -1,8 +1,8 @@
 <template>
-    <div :class="isDone ? 'done item' : 'item'">
+    <div class="item">
         <input type="checkbox" v-model="isDone" @change="handleCheck">
-        <p>{{ item.name }}</p>
-        <button @click="handleClick" :class="isDone ? 'done' : ''">X</button>
+        <p :class="isDone ? 'done' : ''">{{ item.name }}</p>
+        <a href="javascript:void(0)" @click="handleClick" :class="isDone ? 'done' : ''">удалить</a>
     </div>
 </template>
 
@@ -27,28 +27,38 @@ import { ref } from 'vue';
     display: flex;
     gap: 1rem;
     max-width: 100%;
+    background-color: #505050;
+    margin-top: 1rem;
+    border-radius: 10px;
+    padding: 1rem;
 
 }
 p {
     max-width: 100%;
     word-wrap: break-word;
 }
-div[class~=done] {
+.done {
     color: gray;
     text-decoration: line-through;
 }
 
 
-button {
-    background: none;
+a {
     color: red;
-
-    border: none;
     vertical-align: super;
-    cursor: pointer;
+    font-size: 0.7rem;
 }
 
-div[class~=done] button {
+a.done {
     color: rgb(233, 82, 82);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: blueviolet;
+}
+
+input[type="checkbox"] {
+    accent-color: orange;
 }
 </style>
