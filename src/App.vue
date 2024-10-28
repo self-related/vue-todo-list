@@ -3,7 +3,7 @@
     <Form @item-added="addItem" />
     <ul>
       <li v-for="item in items" :key="'item-' + nanoid()">
-        <Item :item="item"/>
+        <Item :item="item" @item-deleted="deleteItem"/>
       </li>
     </ul>
   </main>
@@ -21,5 +21,9 @@ const addItem = (itemName) => {
   if (itemName === '') return;
 
   items.value.push({ name: itemName, done: "false" });
+};
+
+const deleteItem = (name) => {
+  items.value = items.value.filter(item => item.name !== name);
 };
 </script>
