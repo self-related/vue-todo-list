@@ -1,8 +1,13 @@
 <template>
-    <div class="item">
+    <div v-if="!isEditing" class="item">
         <input type="checkbox" v-model="isDone" @change="handleCheck">
         <p :class="isDone ? 'done' : ''">{{ item.name }}</p>
+        <a href="javascript:void(0)" @click="turnEdit" :class="isDone ? 'done' : ''">редакт.</a>
         <a href="javascript:void(0)" @click="handleClick" :class="isDone ? 'done' : ''">удалить</a>
+    </div>
+    <div v-if="isEditing" class="item">
+        <input type="text" v-model="newName">
+        <button @click="edit">Ок</button>
     </div>
 </template>
 
@@ -13,12 +18,22 @@ import { ref } from 'vue';
     
     const item = ref(props.item);
     const isDone = ref(props.item.done);
+    const isEditing = ref(false);
 
     const handleClick = () => {
         emit('item-deleted', item.value.name);
     };
     const handleCheck = () => {
         emit("item-status-changed", item.value.name, isDone.value);
+    };
+
+    let newName = item.value.name;
+    const turnEdit = () => {
+        isEditing.value = true;
+    }
+    const edit = () => {
+        item.value.name = newName;
+        isEditing.value = false;
     };
 </script>
 

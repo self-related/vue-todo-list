@@ -39,25 +39,5 @@ input[type="text"] {
 input[type="text"]:focus {
   outline: 2px solid orange;
 }
-input[type="submit"] {
-  display: block;
-  margin: auto;
-  background-color: orange;
-  border: none;
-  border-radius: 5px;
-  padding: 5px;
-  color: white;
-  font-weight: bold;
-  text-shadow: 0.05rem 0.05rem 0.05rem black;
-  cursor: pointer;
-}
-
-input[type="submit"]:hover {
-    background-color: blueviolet;
-}
-
-input[type="submit"]:active {
-    background-color: #f03a3a;
-}
 
 </style>

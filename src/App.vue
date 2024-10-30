@@ -89,4 +89,26 @@ a, p {
   text-shadow: 0.03rem 0.03rem 1px black !important;
 
 }
+
+input[type="submit"], button {
+  display: block;
+  margin: auto;
+  background-color: orange;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0.05rem 0.05rem 0.05rem black;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: blueviolet;
+}
+
+input[type="submit"]:active, button:active {
+    background-color: #f03a3a;
+}
+
 </style>
