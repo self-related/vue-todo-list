@@ -67,7 +67,7 @@ const deleteAll = () => {
   background: none;
   border: none;
   margin: 5px;
-  color: red;
+  color: #f03a3a;
   text-decoration: underline;
 }
 #delete-all:hover {
@@ -83,5 +83,10 @@ ul {
 li {
   list-style: none;
   max-width: 100%;
+}
+
+a, p {
+  text-shadow: 0.03rem 0.03rem 1px black !important;
+
 }
 </style>

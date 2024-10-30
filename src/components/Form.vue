@@ -57,7 +57,7 @@ input[type="submit"]:hover {
 }
 
 input[type="submit"]:active {
-    background-color: red;
+    background-color: #f03a3a;
 }
 
 </style>

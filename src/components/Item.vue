@@ -44,7 +44,7 @@ p {
 
 
 a {
-    color: red;
+    color: #f03a3a;
     vertical-align: super;
     font-size: 0.7rem;
 }
