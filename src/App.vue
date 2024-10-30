@@ -111,4 +111,14 @@ input[type="submit"]:active, button:active {
     background-color: #f03a3a;
 }
 
+input[type="text"] {
+  border-radius: 5px;
+  border: none;
+  margin: auto;
+}
+
+input[type="text"]:focus {
+  outline: 2px solid orange;
+}
+
 </style>

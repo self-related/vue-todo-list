@@ -28,16 +28,9 @@ form {
 
 input[type="text"] {
   display: block;
-  border-radius: 5px;
-  border: none;
   height: 1.2rem;
   width: 70%;
-  margin: auto;
   margin-bottom: 10px;
-}
-
-input[type="text"]:focus {
-  outline: 2px solid orange;
 }
 
 </style>

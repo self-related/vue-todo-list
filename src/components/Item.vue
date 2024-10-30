@@ -72,6 +72,9 @@ a.done {
 a:hover {
     color: blueviolet;
 }
+input[type="text"] {
+    height: 1.5rem;
+}
 
 input[type="checkbox"] {
     accent-color: orange;
